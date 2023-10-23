@@ -1,0 +1,21 @@
+[package]
+name = "profiles"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.4.6", features = ["derive", "cargo"] }
+serde = { version = "1.0.189", features = ["derive"] }
+setenv = { git = "https://github.com/fraclysis/setenv.git" }
+toml = { version = "0.8.2", features = ["preserve_order"] }
+indexmap = "2.0.2"
+colored = "2.0.4"
+unicase = "2.7.0"
+
+[features]
+build-setenv = ["setenv/build-dll"]
+
+[profile.release]
+debug = true
